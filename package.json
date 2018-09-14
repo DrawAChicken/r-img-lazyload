@@ -1,0 +1,11 @@
+{
+  "name": "r-img-lazyload",
+  "version": "1.0.0",
+  "description": "React module for lazy-loading images in your react.js applications.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
