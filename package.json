@@ -3,9 +3,23 @@
   "version": "1.0.0",
   "description": "React module for lazy-loading images in your react.js applications.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "unpkg": "index.js",
+  "scripts": {},
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DrawAChicken/r-img-lazyload.git"
   },
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "r-img-lazyload",
+    "react",
+    "react-lazyload",
+    "react-img-lazyload"
+  ],
+  "author": "ssslb <283531562@qq.com>",
+  "bugs": {
+    "url": "https://github.com/DrawAChicken/r-img-lazyload/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {}
 }
