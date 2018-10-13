@@ -1,6 +1,6 @@
 {
   "name": "r-img-lazyload",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React module for lazy-loading images in your react.js applications.",
   "main": "dist/r-img-lazyload.js",
   "unpkg": "index.js",
