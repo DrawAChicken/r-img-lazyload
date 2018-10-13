@@ -1,10 +1,12 @@
 {
   "name": "r-img-lazyload",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React module for lazy-loading images in your react.js applications.",
-  "main": "index.js",
+  "main": "dist/r-img-lazyload.js",
   "unpkg": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "rimraf dist && webpack --mode production"
+  },
   "dependencies": {},
   "repository": {
     "type": "git",
@@ -14,12 +16,33 @@
     "r-img-lazyload",
     "react",
     "react-lazyload",
-    "react-img-lazyload"
+    "react-img-lazyload",
+    "lazy",
+    "lazy-load",
+    "lazyload",
+    "lazy loading",
+    "load"
+
   ],
   "author": "ssslb <283531562@qq.com>",
   "bugs": {
     "url": "https://github.com/DrawAChicken/r-img-lazyload/issues"
   },
   "license": "MIT",
-  "devDependencies": {}
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "rimraf": "^2.6.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  }
 }
