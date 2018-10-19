@@ -26,7 +26,7 @@ export default class Listener {
         if (this.status.error) {
             return;
         }
-        if (this.status.loaded || imageCache[this.src]) {
+        if (this.status.loaded || imgCache[this.src]) {
             this.render('loaded');
         }
         loadImageAsync({
@@ -35,7 +35,7 @@ export default class Listener {
             this.status.loaded = true;
             this.status.error = false;
             this.render('loaded');
-            imageCache[this.src] = true;
+            imgCache[this.src] = true;
         }, e => {
             this.status.loaded = false;
             this.status.error = true;
