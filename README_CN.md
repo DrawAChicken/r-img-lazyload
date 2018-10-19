@@ -5,17 +5,14 @@
 [![npm license](https://img.shields.io/npm/l/vue-lazyload.svg?style=flat-square)](https://www.npmjs.com/package/r-img-lazyload)
 
 
-React module for lazy-loading images in your react.js applications. Some of goals of this project worth noting include:
+用于React的图片懒加载库:
 
-* [中文文档](https://github.com/DrawAChicken/r-img-lazyload/blob/master/README_CN.md)
-* Based on [vue-lazyLoad](https://github.com/hilongjw/vue-lazyload) rewriting
-* Be lightweight, powerful and easy to use
-* Work on any image type
-* Add loading class while image is loading
-* Applicable to any style of layout
-* Supports both of React
+* 基于 [vue-lazyLoad](https://github.com/hilongjw/vue-lazyload) 改写
+* 轻巧、功能强大且很方便使用
+* 适用于任何图片类型
+* 适用于任何布局
 
-# Installation
+# 安装依赖
 
 ## npm
 
@@ -24,8 +21,8 @@ React module for lazy-loading images in your react.js applications. Some of goal
 $ npm install r-img-lazyload
 
 ```
-# Usage
-use `component` work
+# 使用
+直接引用就可以使用
 
 ```js
 import React, { Component } from 'react';
@@ -47,12 +44,12 @@ export default class extends Component {
     }
 }
 ```
-use `raw HTML` work
+添加 `tag` 可改变编译后的DOM，图像会成为DOM背景图
 
 ```js
     <Lazyload src="http://xxxx.com/pic.png" tag="div" />
 ```
-recommend `Package component` to use
+推荐封装后使用，适用于全局的loading图片和error图片统一处理
 
 ```js
 // Lazy.jsx
@@ -85,25 +82,24 @@ function HomePage() {
 }
 
 ```
-## Constructor Options
+## 主要配置
 | key | description | default | options |
 | :-: | :-: | :-: | :-: |
-| src | Picture address | ‘’ | String |
-| tag |  Background image using the label | ‘’ | String |
-| options |  Other configuration | {} | [Other configuration](#othercon-figuration) |
+| src | 图片地址 | ‘’ | String |
+| tag | 指定生成为某个DOM为其添加背景 | ‘’ | String |
+| options |  其他配置项 | {} | [Other configuration](#othercon-figuration) |
 
-### Other configuration
+### 其他配置
 | key | description | default | options |
 | :-: | :-: | :-: | :-: |
-| error | src of the image upon load fail | ‘’ | String |
-| loading | src of the image while loading | ‘’ | String |
-| listenEvents |  events that you want React listen for | `['scroll', 'wheel', 'mousewheel', 'resize', 'animationend', 'transitionend', 'touchmove'`] | Object |
-| throttleWait |  throttle wait | 200 |Number|
+| error | 加载失败后展示的图像 | ‘’ | String |
+| loading | 加载中展示的图像 | ‘’ | String |
+| listenEvents |  事件监听 | `['scroll', 'wheel', 'mousewheel', 'resize', 'animationend', 'transitionend', 'touchmove'`] | Object |
+| throttleWait |  节流等待时间 | 200 |Number|
 
-### Desired Listen Events
+### 事件监听
 
-You can configure which events you want v-img-lazyload by passing in an array
-of listener names.
+您可以通过传入数组来配置您想要v-img-lazyload的事件监听的名字。
 
 ```js
 import React, { Component } from 'react';
@@ -118,7 +114,7 @@ export default class extends Component {
             options: {
                 error: 'errorPic',
                 loading: 'loadingPic',
-                // the default is ['scroll', 'wheel', 'mousewheel', 'resize', 'animationend', 'transitionend']
+                // 默认为 ['scroll', 'wheel', 'mousewheel', 'resize', 'animationend', 'transitionend']
                 listenEvents: [ 'scroll' ]
             },
             src: ''
@@ -127,15 +123,15 @@ export default class extends Component {
     }
 }
 ```
-
-### CSS state
-here are three states while img loading `loading`、`loaded` 、`error`
+### CSS 状态
+图片加载时有三种状态`loading`、`loaded` 、`error`
 
 ```html
 <img src="imgUrl" lazy="loading">
 <img src="imgUrl" lazy="loaded">
 <img src="imgUrl" lazy="error">
 ```
+
 ```css
 <style>
   img[lazy=loading] {

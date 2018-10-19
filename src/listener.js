@@ -1,5 +1,6 @@
 import { loadImageAsync } from './tuil';
 
+let imgCache = {}
 export default class Listener {
     constructor({
         el, src, $parent, elRenderer, options
@@ -22,12 +23,19 @@ export default class Listener {
         };
     }
     load() {
+        if (this.status.error) {
+            return;
+        }
+        if (this.status.loaded || imageCache[this.src]) {
+            this.render('loaded');
+        }
         loadImageAsync({
             src: this.src
         }, () => {
             this.status.loaded = true;
             this.status.error = false;
             this.render('loaded');
+            imageCache[this.src] = true;
         }, e => {
             this.status.loaded = false;
             this.status.error = true;
